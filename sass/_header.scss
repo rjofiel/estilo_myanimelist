@@ -1,0 +1,22 @@
+@import "variables";
+
+.header {
+	position: fixed;
+	right: 0px;
+	width: 100%;
+	background-color: transparent;
+	border: 0px !important;
+	box-shadow: 0px 0px 0px black;
+}
+
+.header {
+	.header-menu,
+	.header-title {
+		display: block;
+		background-color: $watching-color;
+	}
+	
+	.header-menu:nth-child() {
+		display: inline-block;
+	}
+}

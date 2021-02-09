@@ -1,0 +1,311 @@
+// Base
+
+@import "variables";
+@import "functions";
+
+/*
+* Général
+=============================================*/
+
+body {
+  background: $background-color !important;
+  font-size: 13px;
+  margin: 0px !important;
+  padding: 0px;
+}
+
+.header,
+.list-menu-float,
+.list-container,
+footer {
+  display: block;
+}
+
+/*
+* Header
+=============================================*/
+
+.header {
+  position: absolute !important;
+  display: none !important;
+  width: 100%;
+  height: 70px;
+  top: 0px;
+  left: 70px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background: #1976d225;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 3;
+}
+
+.header .header-menu {
+  position: absolute;
+  top: 25px;
+  right: 125px;
+}
+
+/*
+* Menu
+=============================================*/
+
+.list-menu-float {
+  position: absolute;
+  height: 50px;
+  width: 480px;
+  top: 25px;
+  bottom: 0;
+  left: 0;
+  border: 0px solid rgba(0, 0, 0, 0);
+  background: transparent !important;
+  z-index: 3;
+}
+
+.list-menu-float .icon-menu,
+.list-menu-float form {
+  display: inline-block;
+  background-color: #ffffff !important;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.list-menu-float .icon-menu.quick-add svg.icon-quick-add,
+.list-menu-float .icon-menu.anime-list svg.icon-anime-list,
+.list-menu-float .icon-menu.manga-list svg.icon-manga-list,
+.list-menu-float .icon-menu.history svg.icon-history,
+.list-menu-float .icon-menu.export svg.icon-export,
+.list-menu-float .icon-menu.logout svg.icon-logout,
+.list-menu-float .icon-menu.setting svg.icon-setting {
+  left: 4.5px;
+  top: 5px;
+  width: 1rem;
+  height: 1rem;
+}
+
+.list-menu-float .icon-menu svg.icon {
+  fill: $menu-float-color;
+}
+
+.list-menu-float .icon-menu:hover svg.icon {
+  fill: $menu-float-color-hover;
+}
+
+.list-menu-float .icon-menu .text {
+  position: absolute;
+  top: 24px;
+  left: 75px;
+  width: 0;
+  display: inline-block;
+  color: $font-color_base;
+}
+
+.list-menu-float .icon-menu.history .text,
+.list-menu-float .icon-menu.export .text,
+.list-menu-float .icon-menu .text {
+  left: 60px;
+}
+
+.list-menu-float .icon-menu.profile {
+  width: 125px;
+  height: 125px;
+  border: 8px solid #323232;
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.3);
+}
+
+.list-menu-float .icon-menu:hover:not(.profile) {
+  width: 25px;
+}
+
+.list-menu-float .icon-menu:hover:not(.profile) .text {
+  width: 0px;
+}
+
+.list-menu-float .icon-menu.setting:hover .text {
+  width: 130px;
+}
+
+.list-menu-float .icon-menu.setting:hover .text .link-list-setting,
+.list-menu-float .icon-menu.setting:hover .text .link-style-setting {
+  position: absolute;
+  background-color: #ffffffef;
+  display: block;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: #777777;
+}
+
+.list-menu-float .icon-menu.setting .text .link-list-setting:hover,
+.list-menu-float .icon-menu.setting .text .link-style-setting:hover {
+  color: $menu-float-color-hover;
+}
+
+.list-menu-float .icon-menu.setting:hover .text .link-style-setting {
+  border-top: #323232 1px solid;
+}
+
+/*
+* List
+=============================================*/
+
+.list-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border: none;
+  background: $background-color !important;
+}
+
+.cover-block {
+  max-width: 100%;
+  width: 100%;
+  margin: 100px;
+  background: transparent;
+  display: none !important;
+}
+
+.cover-block .image-container {
+  display: block;
+  width: 100%;
+  padding-top: 0px;
+}
+
+.cover-block .image-container img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  height: 625px;
+}
+
+[src="https://myanimelist.cdn-dena.com/s/common/uploaded_files/1455542413-6b19ce62d01ef05368166ff6db661484.png"]
+{
+  background-color: #1976d2 !important;
+}
+
+.cover-block .image-container .btn-list-setting:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  border: none;
+  box-shadow: 0 0 4px #000000;
+  font-size: 1.5em;
+  color: #ffffff;
+}
+
+.status-menu-container {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #323232;
+  font-family: $font-family_base !important;
+  font-weight: 300;
+  top:-9px;
+  position: relative;
+  z-index: 5;
+}
+
+.status-menu-container .status-menu .status-button {
+  font-family: $font-family_base !important;
+  color: $font-color_base;
+
+  &:hover {
+    color: $font-color_base-hover;
+  }
+}
+
+.status-menu-container .search-container #search-button {
+  margin-top: 10px;
+  font-size: 2em;
+}
+
+.list-block{
+  z-index: -1;
+}
+
+.list-unit,
+.list-unit .list-status-title {
+  width: 100%;
+}
+
+.list-unit .list-status-title {
+  background-image: url(https://danbooru.donmai.us/data/__usada_pekora_gawr_gura_houshou_marine_kiryuu_coco_and_bloop_hololive_and_1_more_drawn_by_arient5888__141e651431f75946c92887138dbf4df1.jpg);
+  background-size: 115% 60vh;
+  height: 470px;
+  margin-top:-25px;
+  border-bottom: 4px solid $font-color_base;
+  
+  background-attachment: fixed;
+}
+
+.list-unit .list-status-title .text {
+  width: 100%;
+  color: $font-color_base;
+  text-align: center;
+}
+
+.list-status-title {
+  background-color: $font-color_base-hover !important; /* #2196F3 #1976D2  #1F77B4*/
+}
+
+.list-table .list-table-header .header-title {
+  background: #ffffff;
+  border-bottom: 2px solid;
+}
+
+.list-table .list-table-data .data.title .link,
+.list-table .list-table-data .data a {
+  font-family: $font-family_base !important;
+  &.link.sort {
+
+  color: $color-title !important;
+    
+    
+  }
+}
+
+.status-menu-container .search-container #search-button:hover,
+.status-menu-container .status-menu .status-button:hover,
+.list-table .list-table-header .header-title .link.sort:hover,
+.list-table .list-table-data a:hover:not(.edit-disabled) {
+  color: $font-color_base-hover !important;
+}
+
+.status-menu-container .status-menu .status-button {
+  &.on {
+    color: $font-color_base-hover !important;
+  }
+  &::after {
+    color: $font-color_base-hover !important;
+    background-color: $font-color_base-hover !important;
+  }
+}
+
+.status-menu-container .status-menu .status-button:active {
+  font-weight: 400;
+}
+
+/*
+* Footer
+=============================================*/
+
+footer {
+  position: relative;
+}
+
+#footer-block {
+  padding: 0;
+  background-color: transparent;
+  font-family: sans-serif;
+}
+
+#copyright {
+  font-size: 0.8rem;
+  color: #777777;
+  margin: 10px;
+  text-align: center;
+}
