@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   :first-child {
     position: relative;
   }
@@ -89,7 +89,6 @@
       }
     }
   }
-
   .list-item {
     .list-table-data {
       .data:not(.image) {
@@ -107,16 +106,16 @@
           height: 300px;
           background-position-x: center;
           background-position-y: top;
-          filter: brightness(0.4);
+          filter: brightness(1);
           &:hover {
-            filter: brightness(1);
+            filter: brightness(0.6);
             transition: all 0.6s;
           }
         }
         img {
           width: 220px;
           height: 300px;
-          opacity: 0;
+          opacity: 1;
         }
       }
     }
@@ -128,6 +127,7 @@
   display: flex;
   flex-direction: column;
   height: 302px;
+  font-family: $font-family_base !important;
   .data {
     border-bottom: 0px solid #000000 !important;
 
@@ -223,20 +223,40 @@
       }
     }
     &.type {
-      visibility: collapse;
+      position: absolute !important;
+      top: 35px;
+
+      color: white !important;
+
+      font-size: 1.1em;
+      font-weight: bold;
+
+      opacity: 0;
+
+      &::before{
+        position: relative;
+        top:9px;
+        padding: 2px;
+        content: "*";
+        font-size: 30px !important;
+      }
+      &:hover{
+        opacity: 1;
+      }
     }
     &.progress {
       position: absolute !important;
       font-size: 12px !important;
-      width: 40px;
       bottom: 0;
       right: 0;
 
       text-shadow: 1px 2px 2px rgba($color: #000000, $alpha: 0.6) !important;
       font-family: $font-family_base;
 
-      padding: 2px 5px;
-      span {
+      padding: 2px 15px;
+
+      div{
+        color: white;
         &::after {
           content: " Ep";
         }
@@ -244,6 +264,17 @@
     }
     &.tags {
       position: absolute !important;
+      top: 10px;
+      width: 50px;
+      font-family: $font-family_base;
+      .edit{
+        position: absolute;
+        top: 0px;
+        left: 170px;
+        color: white !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+      }
     }
   }
 }
@@ -254,6 +285,7 @@
 }
 
 .data.score .link {
+  cursor: auto;
   .score-na {
     font-size: 0;
     order: -1;
@@ -269,23 +301,24 @@
       content: "";
       width: 221px;
       height: 3px;
-      border-top: 2.5px solid silver;
-      left: -124px;
-      top: calc(-100% - 264px);
+      border-top: 2.5px solid $color-excellent;
+      left: -122px;
+      top: calc(-100% - 265px);
       border-radius: 7px 7px 0px 0px;
+
     }
     &::after {
       position: absolute;
       content: " Excellent ";
-      left: -57px;
-      top: calc(-100% - 270px);
+      left: -50px;
+      top: calc(-100% - 273px);
       font-size: 14px;
       letter-spacing: 1px;
       padding: 2px;
 
       border-radius: 3px;
 
-      background-color: silver;
+      background-color: $color-excellent;
     }
   }
   .score-10 {
@@ -294,28 +327,36 @@
       content: "";
       width: 221px;
       height: 3px;
-      border-top: 2.5px solid orange;
-      left: -124px;
-      top: calc(-100% - 264px);
+      border-top: 2.5px solid $color-masterpiece;
+      left: -122px;
+      top: calc(-100% - 265px);
       border-radius: 7px 7px 0px 0px;
     }
     &::after {
       position: absolute;
       content: " Masterpiece ";
-      left: -70px;
-      top: calc(-100% - 270px);
+      left: -65px;
+      top: calc(-100% - 273px);
       font-size: 14px;
       letter-spacing: 1px;
       padding: 2px;
 
       border-radius: 3px;
 
-      background-color: orange;
+      background-color: $color-masterpiece;
     }
   }
 }
 
+.list-table .list-table-data a:hover:not(.edit-disabled){
+  color: white !important;
+}
+
 [data-query*="status"] {
+
+  .onhold ~ .data.score::before{
+    content: "On Hold | ";
+  }
   .plantowatch ~ .data.score::before {
     content: "Planned | ";
   }
@@ -344,4 +385,27 @@
   .dropped ~ .data.title {
     background-color: $color-dropped !important;
   }
+}
+
+.list-item{
+  transform: scale(0.95);
+  &:hover{
+    transform: scale(1);
+    transition: all 0.3s;
+  }
+}
+
+
+.list-item .data:not(.image, .score, .title, .progress) {
+  opacity: 0;
+}
+
+.progress span:last-of-type{
+  opacity: 1;
+}
+
+
+.list-item:hover .data:not(.image), .list-item:focus-within .data:not(.image) {
+  transition: all 0.6s;
+  opacity: 1;
 }
