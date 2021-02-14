@@ -53,9 +53,6 @@ footer {
   position: absolute;
   height: 50px;
   width: 480px;
-  top: 25px;
-  bottom: 0;
-  left: 0;
   border: 0px solid rgba(0, 0, 0, 0);
   background: transparent !important;
   z-index: 3;
@@ -107,12 +104,14 @@ footer {
 }
 
 .list-menu-float .icon-menu.profile {
-  width: 125px;
-  height: 125px;
+  width: 150px;
+  height: 150px;
   border: 8px solid #323232;
   border-radius: 50%;
   background-size: cover;
   box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.3);
+
+  margin-right: 10px;
 }
 
 .list-menu-float .icon-menu:hover:not(.profile) {
@@ -227,25 +226,37 @@ footer {
   z-index: -1;
 }
 
+.list-status-title{
+  box-shadow: 0px 2px 3px rgba($color: #000000, $alpha: 0.6);
+}
+
 .list-unit,
 .list-unit .list-status-title {
   width: 100%;
 }
 
 .list-unit .list-status-title {
-  background-image: url(https://danbooru.donmai.us/data/__usada_pekora_gawr_gura_houshou_marine_kiryuu_coco_and_bloop_hololive_and_1_more_drawn_by_arient5888__141e651431f75946c92887138dbf4df1.jpg);
-  background-size: 115% 60vh;
+  background-image: url($url-imagen);
+  background-position: top;
   height: 470px;
   margin-top:-25px;
   border-bottom: 4px solid $font-color_base;
+
+  background-position: center;
   
-  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-color: hsla(10, 0.5, 10, 0.5);
 }
 
 .list-unit .list-status-title .text {
-  width: 100%;
+  width: auto;
   color: $font-color_base;
   text-align: center;
+  font-size: 4em;
+  font-weight: 400;
+  text-shadow: 1px 2px 4px rgba($color: #000000, $alpha: 0.69);
 }
 
 .list-status-title {

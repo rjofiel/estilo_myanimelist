@@ -1,0 +1,14 @@
+.list-menu-float{
+  top: 420px;
+  bottom: 0px;
+  left: 10px;
+}
+
+.icon-menu:not(.profile){
+    position: relative !important;
+    top: -30px;
+}
+
+.list-menu-float form{
+    background-color: transparent !important;
+}
